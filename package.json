@@ -1,5 +1,5 @@
 {
-  "name": "applications",
+  "name": "desafio-clarice-ai",
   "private": true,
   "scripts": {
     "build": "turbo build",
@@ -13,11 +13,10 @@
     "typescript": "^5.4.5"
   },
   "engines": {
-    "node": ">=18"
+    "node": "22.0.0"
   },
   "packageManager": "npm@9.1.2",
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "apps/*"
   ]
 }
