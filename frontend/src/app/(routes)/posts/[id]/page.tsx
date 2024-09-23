@@ -1,35 +1,5 @@
 import { notFound } from 'next/navigation';
-import axios from 'axios';
-
-interface Post {
-  id: number;
-  title: string;
-  body: string;
-  userId: number;
-}
-
-interface User {
-  id: number;
-  name: string;
-}
-
-const fetchPost = async (id: string) => {
-  try {
-    const res = await axios.get<Post>(`https://jsonplaceholder.typicode.com/posts/${id}`);
-    return res.data;
-  } catch (error) {
-    return null;
-  }
-};
-
-const fetchUser = async (userId: number) => {
-  try {
-    const res = await axios.get<User>(`https://jsonplaceholder.typicode.com/users/${userId}`);
-    return res.data;
-  } catch (error) {
-    return null;
-  }
-};
+import { fetchPost, fetchUser } from '../../../_services/postService';
 
 interface PostPageProps {
   params: { id: string };
