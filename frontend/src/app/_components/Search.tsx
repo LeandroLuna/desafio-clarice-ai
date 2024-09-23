@@ -4,17 +4,18 @@ import { useState } from 'react';
 import { Post } from '../_interfaces/Post';
 
 interface SearchProps {
-    posts: Post[]
+    posts: Post[],
+    onSearch: (filteredPosts: Post[]) => void;
 }
 
-const Search: React.FC<SearchProps> = ({ posts }) => {
+const Search: React.FC<SearchProps> = ({ posts, onSearch }) => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleSearch = (term: string) => {
       const filteredPosts = posts.filter(post =>
         post.title.toLowerCase().includes(term.toLowerCase())
       );
-      console.log(filteredPosts);
+      onSearch(filteredPosts);
     };
 
     return (
