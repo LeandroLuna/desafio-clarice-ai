@@ -56,8 +56,8 @@ API Simples de Processamento de Texto com Comportamento Assíncrono e Componente
 
 1. Clone o repositório:
    ```bash
-    git clone https://github.com/seu-usuario/seu-repositorio.git
-    cd seu-repositorio
+    git clone https://github.com/LeandroLuna/desafio-clarice-ai.git
+    cd desafio-clarice-ai/backend
     ```
 
 2. Crie e ative um ambiente virtual:
