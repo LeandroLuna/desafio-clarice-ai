@@ -1,0 +1,38 @@
+version: 1
+
+applications:
+  - frontend:
+      phases:
+        preBuild:
+          commands:
+            - cd frontend
+            - npm ci
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: frontend/build
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - frontend/node_modules/**/*
+
+  - backend:
+      phases:
+        preBuild:
+          commands:
+            - cd backend
+            - python3 -m venv venv
+            - source venv/bin/activate
+            - pip install -r requirements.txt
+        build:
+          commands:
+            - uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+      artifacts:
+        baseDirectory: backend/
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - backend/venv/**/*
