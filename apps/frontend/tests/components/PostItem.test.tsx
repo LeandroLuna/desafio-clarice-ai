@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import PostItem from '../../src/app/_components/PostItem';
 import { Post } from '../../src/app/_interfaces/Post';
