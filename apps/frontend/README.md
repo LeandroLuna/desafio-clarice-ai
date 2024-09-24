@@ -4,7 +4,7 @@
 
 Avaliar a capacidade de construir uma interface simples, funcional e responsiva utilizando React e Next.js, incorporando gerenciamento de estado, roteamento e interação com uma API pública.
 
---
+---
 
 ## Exercício 
 
